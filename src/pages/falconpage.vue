@@ -1,14 +1,23 @@
 <template>
-  <div>
-    <div class="card">
-    </div>
+  <div>  
+    <h1>Welcome to Falcon View Page</h1>
   </div>
 </template>
-
 <script>
 export default {
-  components: {}
+  props: [],
+  components: {},
+  watch: {},
+  computed: {},
+  created() {},
+  data() {
+    return {};
+  },
+  methods: {
+   
+  }
 };
 </script>
 
-<style></style>
+<style scoped>
+</style>

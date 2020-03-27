@@ -34,7 +34,11 @@
         </p>
       </div>
     </div>
-    <router-view class="sidenav" />
+    <router-view :class="
+        expandMenu == true
+          ? 'sidenav-collapse'
+          : 'sidenav-expand'
+      " class="sidenav" />
   </div>
 </template>
 
@@ -146,5 +150,11 @@ export default {
   top: 0px;
   position: fixed;
   z-index: 5;
+}
+.sidenav-expand {
+  margin-left: 120px !important;
+}
+.sidenav-collapse {
+  margin-left: 60px !important;
 }
 </style>

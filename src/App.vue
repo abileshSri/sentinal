@@ -42,4 +42,20 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+.table-header-bg {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+  color: #ffffff !important;
+  background-color: #6192b1 !important;
+  /* border-color: #6192b1 !important; */
+}
+.table-body-bg {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "Lato", sans-serif;
+  color: #000000 !important;
+  background-color: #f8f8f8 !important;
+  /* border-color: #6192b1 !important; */
+}
 </style>
