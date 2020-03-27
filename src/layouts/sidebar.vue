@@ -6,32 +6,34 @@
       class="w-100 nav-bar-style"
     />
     <div class="notification-card"></div>
-    <div
-      class="float-left"
-      :class="
-        expandMenu == true
-          ? 'sentinal-collapse-sidebar'
-          : 'sentinal-expand-sidebar'
-      "
-    >
-      <span class="cursor-pointer" @click="triggermenu()">
-        <img
-          :class="expandMenu == true ? 'ml-1' : 'ml-n4'"
-          src="../assets/bars-solid.svg"
-        />
-        <span v-if="!expandMenu" class="sentinal-sidetext ml-2"> Menu </span>
-      </span>
+    <div class="expand-card">
       <div
-        :class="activeSideBar(i)"
-        class="side-nav mt-3 cursor-pointer"
-        v-for="(data, i) in menu"
-        :key="i"
-        @click="navigatePage(data.name)"
+        class="float-left"
+        :class="
+          expandMenu == true
+            ? 'sentinal-collapse-sidebar'
+            : 'sentinal-expand-sidebar'
+        "
       >
-        <img class="mt-2" :src="getImage(data.icon)" />
-        <p v-if="!expandMenu" class="sentinal-sidetext mt-2">
-          {{ data.title }}
-        </p>
+        <span class="cursor-pointer" @click="triggermenu()">
+          <img
+            :class="expandMenu == true ? 'ml-1' : 'ml-n4'"
+            src="../assets/bars-solid.svg"
+          />
+          <span v-if="!expandMenu" class="sentinal-sidetext ml-2"> Menu </span>
+        </span>
+        <div
+          :class="activeSideBar(i)"
+          class="side-nav mt-3 cursor-pointer"
+          v-for="(data, i) in menu"
+          :key="i"
+          @click="navigatePage(data.name)"
+        >
+          <img class="mt-2" :src="getImage(data.icon)" />
+          <p v-if="!expandMenu" class="sentinal-sidetext mt-2">
+            {{ data.title }}
+          </p>
+        </div>
       </div>
     </div>
     <router-view class="sidenav" />
@@ -125,19 +127,23 @@ export default {
   font-weight: 600;
 }
 .sentinal-expand-sidebar {
-  top: 0px;
+  position: fixed;
+  top: 60px;
   left: 0px;
   width: 120px;
   height: 708px;
+  margin-right: 10px !important;
   background: #e5e5e5 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000033;
   opacity: 1;
 }
 .sentinal-collapse-sidebar {
-  top: 0px;
+  position: fixed;
+  top: 60px;
   left: 0px;
   width: 60px;
   height: 708px;
+  margin-right: 5px !important;
   background: #e5e5e5 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000033;
   opacity: 1;
@@ -146,5 +152,8 @@ export default {
   top: 0px;
   position: fixed;
   z-index: 5;
+}
+.sidenav {
+  margin-left: 9% !important;
 }
 </style>
