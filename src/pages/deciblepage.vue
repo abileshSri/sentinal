@@ -1,13 +1,23 @@
 <template>
-  <div>
-    :)
+  <div>  
+    <h1>Welcome to Decible Page</h1>
   </div>
 </template>
-
 <script>
 export default {
-  components: {}
+  props: [],
+  components: {},
+  watch: {},
+  computed: {},
+  created() {},
+  data() {
+    return {};
+  },
+  methods: {
+   
+  }
 };
 </script>
 
-<style></style>
+<style scoped>
+</style>

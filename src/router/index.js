@@ -4,14 +4,24 @@ import Router from 'vue-router'
 Vue.use(Router)
 export default new Router({
     mode: "history",
-    base: "/sentinal/",
+    // base: "/sentinal/",
+    base: "/",
     routes: [
+        {
+            path: '/',
+            name: 'Homepage',
+            component: () => import("@/pages/homepage.vue"),
+            meta: {
+                layout: "no-sidebar",
+                adminOnly: true,
+            },
+        },
         {
             path: '/homepage',
             name: 'Homepage',
             component: () => import("@/pages/homepage.vue"),
             meta: {
-                layout: "sidebar",
+                layout: "no-sidebar",
                 adminOnly: true,
             },
         },
