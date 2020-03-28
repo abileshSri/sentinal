@@ -58,4 +58,9 @@ body {
   background-color: #f8f8f8 !important;
   /* border-color: #6192b1 !important; */
 }
+.modal-xl {
+  max-width: 88% !important;
+  margin-left: 135px !important;
+  margin-top: 75px !important;
+}
 </style>

@@ -110,7 +110,7 @@ export default {
       this.expandMenu = !this.expandMenu;
     },
     navigatePage(page) {
-      if (this.$route.name == this.$route.name) {
+      if (this.$route.name != page) {
         this.$router.push({
           name: page
         });
