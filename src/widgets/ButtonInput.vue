@@ -14,6 +14,10 @@ export default {
       switch (this.buttonStyle) {
         case "loginButon":
           return "btn";
+        case "clearFilterButton":
+          return "btn mr-4";
+        case "serachFilterButton":
+          return "btn";
         default:
           return "btn btn-primary button-style";
       }
@@ -22,6 +26,10 @@ export default {
       switch (this.buttonStyle) {
         case "loginButon":
           return "width: 100px; height: 40px; border-radius: 3px; border: solid 1px #e5e5e5; background-color: #e5e5e5; color: #000000; font-size: 14px; font-weight: normal;";
+        case "clearFilterButton":
+          return "width: 110px; height: 40px; border-radius: 3px; border: solid 1px #e5e5e5; background-color: #e5e5e5; color: #000000; font-size: 14px; font-weight: normal;";
+        case "serachFilterButton":
+          return "width: 110px; height: 40px; border-radius: 3px; border: solid 1px #e5e5e5; background-color: #e5e5e5; color: #000000; font-size: 14px; font-weight: normal;";
         default:
           return "";
       }

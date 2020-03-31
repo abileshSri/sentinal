@@ -63,4 +63,7 @@ body {
   margin-left: 135px !important;
   margin-top: 75px !important;
 }
+.v-application--wrap{
+  min-height: max-content !important;
+}
 </style>

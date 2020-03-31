@@ -6,7 +6,6 @@
         Filter
       </b-button>
     </div>
-
     <b-card class="p-0 m-0">
       <p class="sentinal-sidetext text-left p-0 m-0">Genrewise Split</p>
 
@@ -50,20 +49,95 @@
       :hide-footer="true"
       :ok-only="false"
       size="xl"
-    >Hai
+    >
+      <v-app id="inspire">
+        <v-row align="center">
+          <v-col cols="4">
+            <v-select :items="selectBaseItems" label="Select Base" dense outlined></v-select>
+          </v-col>
+          <v-col cols="4">
+            <v-select :items="selectCategoryItems" label="Category *" dense outlined></v-select>
+          </v-col>
+          <v-col cols="4">
+            <v-autocomplete
+              v-model="multiSelectedValues"
+              :items="multiSelectItems"
+              outlined
+              dense
+              chips
+              small-chips
+              label="Outlined"
+              multiple
+            ></v-autocomplete>
+          </v-col>
+        </v-row>
+        <v-row align="center">
+          <v-col cols="8">
+            <v-row align="center">
+              <v-col cols="4">
+                <v-select :items="selectBaseItems" label="Year Type" dense outlined></v-select>
+              </v-col>
+              <v-col cols="4">
+                <v-select :items="selectCategoryItems" label="Periodicty" dense outlined></v-select>
+              </v-col>
+              <v-col cols="4">
+                <v-select :items="selectCategoryItems" label="Calender Year *" dense outlined></v-select>
+              </v-col>
+            </v-row>
+          </v-col>
+          <v-col cols="4">
+            <v-select :items="selectCategoryItems" label="Date Range" dense outlined></v-select>
+          </v-col>
+        </v-row>
+        <v-row align="center">
+          <v-col cols="8">
+            <v-row align="center">
+              <v-col cols="4">
+                <v-select :items="selectBaseItems" label="Select" dense outlined></v-select>
+              </v-col>
+              <v-col cols="4">
+                <v-select :items="selectCategoryItems" label="Target Group" dense outlined></v-select>
+              </v-col>
+              <v-col cols="4">
+                <v-select :items="selectCategoryItems" label="Day Part" dense outlined></v-select>
+              </v-col>
+            </v-row>
+          </v-col>
+          <v-col cols="4">
+            <span class="float-right mt-n5">
+              <w-button-input
+                :buttonStyle="'clearFilterButton'"
+                :buttonText="'Clear Filter'"
+                @onButtonClick="clearAllFilters()"
+              />
+              <w-button-input
+                :buttonStyle="'serachFilterButton'"
+                :buttonText="'Search'"
+                @onButtonClick="searchSelectedFilter()"
+              />
+            </span>
+          </v-col>
+        </v-row>
+      </v-app>
     </b-modal>
   </div>
 </template>
 <script>
 import piechart from "../widgets/piechart";
 import barchart from "../widgets/barchart";
+import ButtonInput from "../widgets/ButtonInput.vue";
 export default {
   components: {
     "w-pie-chart": piechart,
-    "w-bar-chart": barchart
+    "w-bar-chart": barchart,
+    "w-button-input": ButtonInput
   },
   data() {
     return {
+      selectCategoryItems: ["foo", "bar", "fizz", "buzz"],
+      selectBaseItems: ["foo", "bar", "fizz", "buzz"],
+      multiSelectItems: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN"],
+      multiSelectedValues: ["JAN"],
       filterModal: false,
       dataset: [20, 30],
       piechartData: [
@@ -131,8 +205,5 @@ export default {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
   color: #333333;
-}
-.filter-modal {
-  top: 30px;
 }
 </style>
